@@ -1,0 +1,36 @@
+
+.marketing-section {
+  min-height: 100vh; 
+  padding: 50px 20px;
+  color: #000;
+}
+
+.imgF{
+    background-image: url("../../../assets/back1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    opacity: 0.4;
+}
+
+.z-i{
+    z-index: 2;
+}
+
+.marketing-section {
+    background-color: #ab787c;
+}
+
+.btn-pink {
+  background-color: #f78fa7;
+  color: #000;
+  border: 2px solid #000;
+}
+.btn-pink:hover {
+  background-color: #ffb6c1;
+  color: #000;
+}
+
