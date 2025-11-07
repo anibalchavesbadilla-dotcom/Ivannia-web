@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { TopPage } from "../top-page/top-page";
-import { FromCanva } from "../from-canva/from-canva";
+import { TopPage } from "./top-page/top-page";
 
 @Component({
   selector: 'app-home',
-  imports: [TopPage, FromCanva],
+  imports: [TopPage, ],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

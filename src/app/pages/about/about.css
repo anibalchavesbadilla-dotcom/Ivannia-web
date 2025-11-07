@@ -1,0 +1,297 @@
+.firt-Row{
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    #eeeef0
+  );
+  opacity: 0.95;
+}
+
+
+/* Estilos para la sección completa */
+.mission-vision-section {
+  background-image: linear-gradient(
+    to bottom,
+    #eeeef0,
+    #3f1f9c
+  );
+  opacity: 0.98;
+}
+
+
+
+/* Estilos de la tarjeta individual */
+.mission-card {
+  height: 400px; /* Altura fija para las tarjetas. Ajusta según necesites */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* Suave transición al escalar */
+}
+
+.mission-card:hover {
+  transform: scale(1.03); /* Ligeramente más grande al pasar el mouse */
+}
+
+.mission-card img {
+  filter: brightness(0.7); /* Oscurece la imagen por defecto */
+  transition: filter 0.3s ease-in-out; /* Transición suave para el filtro */
+}
+
+.mission-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(235, 235, 237);
+  color:  rgb(61 30 155); /* Fondo semi-transparente para el texto */
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.3s ease-in-out; /* Transición suave para la opacidad */
+  backdrop-filter: blur(2px); /* Efecto de desenfoque sutil */
+}
+
+.mission-card:hover .mission-overlay {
+  opacity: 1; /* Se muestra al pasar el mouse */
+}
+
+.mission-card:hover img {
+  filter: brightness(0.4); /* Oscurece más la imagen al pasar el mouse */
+}
+
+.mission-overlay .text-content {
+  opacity: 0; /* El contenido de texto también se oculta por defecto */
+  transform: translateY(20px); /* Ligeramente hacia abajo */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  color:  rgb(61 30 155);
+}
+
+.mission-card:hover .mission-overlay .text-content {
+  opacity: 1; /* El contenido de texto se muestra al pasar el mouse */
+  transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* --- Media Queries para Móviles --- */
+@media (max-width: 767.98px) { /* Para pantallas menores a md (768px) */
+  .mission-overlay {
+    opacity: 1; /* Siempre visible en móvil */
+    background-color: rgb(235, 235, 237);
+    color:  rgb(61 30 155); /* Puede ser un poco más oscuro si lo deseas */
+    position: static; /* No absolute, para que ocupe su propio espacio */
+    height: auto; /* Altura automática */
+    padding-top: 20px; /* Espaciado superior */
+    padding-bottom: 20px; /* Espaciado inferior */
+    transform: translateY(0); /* Resetea cualquier transformación */
+  }
+
+  .mission-overlay .text-content {
+    opacity: 1; /* Texto siempre visible en móvil */
+    transform: translateY(0); /* Resetea cualquier transformación */
+    color:  rgb(61 30 155);
+  }
+
+  .mission-card img {
+    height: 250px !important; /* Ajusta la altura de la imagen en móvil si es necesario */
+    filter: brightness(0.6); /* Un poco oscuro para que el texto resalte */
+  }
+
+  .mission-card {
+    height: auto; /* La altura de la tarjeta se ajusta al contenido */
+  }
+
+  .mission-card:hover {
+    transform: none; /* Elimina la escala en hover para móvil */
+  }
+
+  .mission-card:hover .mission-overlay {
+    opacity: 1; /* Mantiene la opacidad en móvil */
+  }
+
+  .mission-card:hover img {
+    filter: brightness(0.6); /* Mantiene el brillo en móvil */
+  }
+}
+
+
+/* Estilos generales de la sección */
+.values-section {
+  background-color: #000;
+  color: #fff;
+}
+
+/* --- Estilo del Círculo (Video) --- */
+.value-circle {
+  /* Tamaño del círculo en escritorio */
+  width: 350px;
+  height: 350px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease-in-out;
+  background-color: #000;
+
+  /* CRUCIALES para el recorte del video */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de borde animado (Opcional) */
+.value-circle::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  animation: rotateBorder 8s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes rotateBorder {
+  0% { transform: rotate(0deg); border-color: rgb(216, 15, 183) transparent transparent transparent; }
+  25% { transform: rotate(90deg); border-color: transparent rgb(216, 15, 183) transparent transparent; }
+  50% { transform: rotate(180deg); border-color: transparent transparent rgb(216, 15, 183) transparent; }
+  75% { transform: rotate(270deg); border-color: transparent transparent transparent rgb(216, 15, 183); }
+  100% { transform: rotate(360deg); border-color: rgb(216, 15, 183) transparent transparent transparent; }
+}
+
+/* Estilos para el video dentro del círculo */
+.value-video {
+  /* CRUCIALES para llenar y centrar el video dentro del círculo */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* --- Estilos de la Lista de Valores --- */
+.values-list {
+  padding-left: 0;
+}
+
+.value-item {
+  margin-bottom: 20px;
+  /* Flexbox para alinear el nombre y la descripción */
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 20px; /* Espacio para el bullet */
+}
+
+/* Bullet (•) */
+.value-item::before {
+  content: '•';
+  color: #fff;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.3s ease-in-out;
+}
+
+.value-name {
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+  margin-right: 10px;
+  white-space: nowrap; /* Evita que el nombre se rompa en escritorio */
+}
+
+/* Texto de la descripción (oculto por defecto) */
+.value-description {
+  font-size: 1.1rem;
+  color: #ccc;
+  opacity: 0; /* Oculto en escritorio */
+  max-width: 0;
+  overflow: visible;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out, max-width 0.8s ease-in-out;
+  padding-left: 0;
+}
+
+/* Efecto al pasar el mouse (Escritorio) */
+.value-item:hover .value-name {
+  color:rgb(216, 15, 183); /* Color dorado */
+}
+
+.value-item:hover .value-description {
+  opacity: 1;
+  max-width: 300px; /* Se despliega */
+}
+
+.value-item:hover::before {
+  color: rgb(216, 15, 183);
+}
+
+.ic-phones{
+  visibility: hidden;
+}
+
+
+/* --- Media Queries para Móviles y Tabletas (max-width: 991.98px) --- */
+@media (max-width: 991.98px) {
+
+  .value-circle {
+    /* Círculo más pequeño en dispositivos medianos/móviles */
+    width: 250px;
+    height: 250px;
+    margin-bottom: 40px;
+  }
+
+  .value-item {
+    display: inline-block;
+    padding-left: 1vh;
+    visibility: inherit;
+  }
+
+  .value-description{
+    position: relative;
+    appearance: auto;
+    margin-left: 32px;
+    transition:none
+  }
+
+  .ic-phones{
+    visibility: inherit;
+    padding-top: 5px;
+  }
+
+  .value-item:hover {
+    .value-description{
+     visibility: inherit;
+    }
+
+    .ic-phones{
+      visibility: hidden;
+    }
+  }
+
+  /* Bullet se comporta como texto normal */
+  .value-item::before {
+    position: static;
+    transform: none;
+    margin-right: 8px;
+  }
+
+  /* El nombre del valor ocupa todo el ancho */
+  .value-name {
+    font-size: 1.5rem;
+    width: 100%;
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+
+}
+
+.bg-s2{
+  background-image: linear-gradient(
+    to bottom,
+    #3f1f9c,
+    #000000
+  );
+  opacity: 0.98;
+}

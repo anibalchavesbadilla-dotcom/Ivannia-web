@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-top-page',
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './top-page.html',
   styleUrl: './top-page.css'
 })

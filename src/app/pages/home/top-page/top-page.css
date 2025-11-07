@@ -1,0 +1,52 @@
+
+.des{
+  font-size: 22px;
+}
+
+@media (max-width: 600px) {
+  .des{
+    font-size: 16px;
+  }
+}
+
+.display-5 {
+ color: #d80fb7;
+}
+
+.firt-Row{
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    #eeeef0
+  );
+  opacity: 0.95;
+}
+
+.secund-Row{
+  background-image: linear-gradient(
+    to bottom,
+    #eeeef0,
+    #3f1f9c
+  );
+  opacity: 0.98;
+}
+
+.btn-1{
+  background: #eeeef0;
+  border-width: 1px;
+  border-color: black;
+}
+
+.btn-1:hover{
+  background: rgb(235, 235, 237);
+}
+
+
+.tres-Row{
+  background-image: linear-gradient(
+    to bottom,
+    #3f1f9c,
+    black
+  );
+  opacity: 0.98;
+}

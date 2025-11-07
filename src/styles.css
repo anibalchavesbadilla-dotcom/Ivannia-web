@@ -1,6 +1,80 @@
+@font-face {
+  font-family: 'Mochalatte';
+  src: url('assets/fonts/Mochalatte.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'BasicSansSemiBold';
+  src: url('assets/fonts/Basic_Sans_SemiBold.otf') format('truetype');
+}
+
+
+
 html, body {
   width: 100%;   /* usa % en vez de vw */
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* previene scroll horizontal */
+}
+
+h1  {
+  font-family: "Mochalatte", sans-serif;
+  font-kerning: none;
+  letter-spacing: 3px;
+  font-size: xxx-large;
+}
+
+.Mochalatte  {
+  font-family: "Mochalatte", sans-serif;
+  font-kerning: none;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: xx-large;
+  }
+}
+
+
+span {
+  font-family: "BasicSansSemiBold", sans-serif;
+  font-size: larger;
+  line-height: 1.6;
+}
+
+h2 {
+  font-family: "BasicSansSemiBold", sans-serif;
+  line-height: 1.6;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "BasicSansSemiBold", sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.btn-outline-secondary {
+  color: var(--bs-heading-color);
+}
+
+.btn-outline-secondary:hover{
+  background: rgb(235, 235, 237);
+  color:  rgb(61 30 155);
+}
+
+
+.bg-laceCap {
+  background-color: rgb(235, 235, 237);
+  color:  rgb(61 30 155);
+
+  h1,h2,h3,h4,h5,h6,span {
+    color:  rgb(61 30 155);
+  }
+}
+
+.bg-purpeMar{
+  background-color: rgb(216, 15, 183);
+  color:  white;
 }

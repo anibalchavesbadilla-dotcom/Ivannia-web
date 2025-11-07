@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "ivannia-miller-vasquez"
-  }
+    "default": "ivannia-miller-vasquez",
+    "ivaniaWeb": "ivannia-miller-vasquez"
+  },
+  "targets": {},
+  "etags": {}
 }

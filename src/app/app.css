@@ -1,0 +1,19 @@
+.app-content {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    url("../assets/images/sides.webp");
+  background-size: cover;
+  background-position: unset;
+  background-repeat: round;
+  min-height: 90vh;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    background-repeat: no-repeat;
+  }
+}
+
+
+
+

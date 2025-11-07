@@ -1,77 +1,89 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    background: #000;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px;
-}
-
-.logo {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li {
-    position: relative;
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 8px;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ccc;
-    background: #212529;
-}
-
-/* Dropdown */
-nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
     left: 0;
-    background: #111;
-    list-style: none;
-    padding: 10px 0;
-    min-width: 150px;
-    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    padding-top: 80px;
+    z-index: 1050;
+    overflow-y: auto;
+
+    /* Animación: inicia oculto arriba */
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  /* Cuando se abre */
+  .navbar-collapse.show {
+    transform: translateY(0);
+  }
+
+  /* Botón de cierre arriba a la derecha */
+  .btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    filter: invert(1); /* blanco sobre fondo oscuro */
+    font-size: 1.5rem;
+    z-index: 2001;
+  }
 }
 
-nav ul li:hover ul {
-    display: block;
+
+/* --- Estilo del Círculo (Video) --- */
+.value-circle {
+  /* Tamaño del círculo en escritorio */
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease-in-out;
+  background-color: #000;
+
+  /* CRUCIALES para el recorte del video */
+  position: relative;
+  overflow: hidden;
 }
 
-nav ul li ul li {
-    margin: 0;
+/* Efecto de borde animado (Opcional) */
+.value-circle::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  animation: rotateBorder 8s linear infinite;
+  opacity: 0.5;
 }
 
-nav ul li ul li a {
-    display: block;
-    padding: 8px 15px;
+@keyframes rotateBorder {
+  0% { transform: rotate(0deg); border-color: rgb(216, 15, 183) transparent transparent transparent; }
+  25% { transform: rotate(90deg); border-color: transparent rgb(216, 15, 183) transparent transparent; }
+  50% { transform: rotate(180deg); border-color: transparent transparent rgb(216, 15, 183) transparent; }
+  75% { transform: rotate(270deg); border-color: transparent transparent transparent rgb(216, 15, 183); }
+  100% { transform: rotate(360deg); border-color: rgb(216, 15, 183) transparent transparent transparent; }
 }
 
-/* Ícono de búsqueda */
-.search-icon {
-    margin-left: 20px;
-    cursor: pointer;
-    font-size: 16px;
+/* Estilos para el video dentro del círculo */
+.value-video {
+  /* CRUCIALES para llenar y centrar el video dentro del círculo */
+  width: inherit;
+  height: inherit;
+  zoom: 1.4;
+}
+
+/* --- Media Queries para Móviles y Tabletas (max-width: 991.98px) --- */
+@media (max-width: 991.98px) {
+
+  .value-circle {
+    /* Círculo más pequeño en dispositivos medianos/móviles */
+    width: 50px;
+    height: 50px;
+  }
 }

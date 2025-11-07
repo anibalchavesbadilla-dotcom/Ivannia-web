@@ -1,48 +1,67 @@
- <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
-    <div class="container-fluid">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mx-2">
     <!-- Logo -->
-    <a class="navbar-brand" href="#">{{title}} {{titledes}}</a>
+    <div class="value-circle position-relative d-flex align-items-center justify-content-center me-2">
+      <img
+        [src]="gifUrl"
+        alt="SoulSync Logo Animado"
+        class="value-video"
+      >
+    </div>
+    <a class="navbar-brand text-truncate d-inline-block" href="#">
+      {{title}}
+    </a>
 
     <!-- Botón hamburguesa -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" 
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Menú -->
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ms-auto">
+    <div class="collapse navbar-collapse pt-2 pt-sm-0" id="navbarNavDropdown">
+      <!-- Botón de cierre visible solo en móvil -->
+        <div class="d-flex justify-content-end pe-4">
+            <button type="button" class="btn-close btn-close-white d-lg-none me-3"
+            data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-label="Cerrar"></button>
+        </div>
+
+      <ul class="navbar-nav ms-auto text-center">
         <li class="nav-item">
-            <a class="nav-link" href="#">Sobre nosotros</a>
+          <a class="nav-link" href="#">Sobre nosotros</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             Servicios
-            </a>
-            <ul class="dropdown-menu">
+          </a>
+          <ul class="dropdown-menu">
             <li *ngFor="let service of servicios">
-                <a class="dropdown-item" href="#">{{service.Name}}</a>
+              <a class="dropdown-item" href="#">{{service.Name}}</a>
             </li>
-            </ul>
+          </ul>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             Proyectos
-            </a>
-            <ul class="dropdown-menu">
+          </a>
+          <ul class="dropdown-menu">
             <li *ngFor="let proyecto of proyectos">
-                <a class="dropdown-item" href="#">{{proyecto.Name}}</a>
+              <a class="dropdown-item" href="#">{{proyecto.Name}}</a>
             </li>
-            </ul>
+          </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Contáctanos</a>
+          <a class="nav-link" href="#">Contáctanos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
+          <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
         </li>
-        </ul>
+      </ul>
     </div>
-    </div>
+  </div>
 </nav>
