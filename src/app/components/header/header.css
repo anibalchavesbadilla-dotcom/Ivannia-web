@@ -75,7 +75,6 @@
   /* CRUCIALES para llenar y centrar el video dentro del círculo */
   width: inherit;
   height: inherit;
-  zoom: 1.4;
 }
 
 /* --- Media Queries para Móviles y Tabletas (max-width: 991.98px) --- */

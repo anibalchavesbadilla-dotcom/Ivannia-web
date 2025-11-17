@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { TopCarousel } from "./top-carousel/top-carousel";
+import { TopPageCards } from "./top-page-cards/top-page-cards";
 
 @Component({
   selector: 'app-top-page',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, TopCarousel, TopPageCards],
   templateUrl: './top-page.html',
   styleUrl: './top-page.css'
 })

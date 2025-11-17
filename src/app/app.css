@@ -1,7 +1,7 @@
 .app-content {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
-    url("../assets/images/sides.webp");
+    url("../assets/images/sides.png");
   background-size: cover;
   background-position: unset;
   background-repeat: round;
@@ -10,7 +10,9 @@
 
 @media (max-width: 768px) {
   .app-content {
-    background-repeat: no-repeat;
+    background-repeat: round;
+    background-size: 79vh;
+    background-position: inherit;
   }
 }
 

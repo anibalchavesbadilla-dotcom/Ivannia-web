@@ -1,0 +1,42 @@
+/* Contenedor principal */
+.slider {
+  overflow: hidden;
+  width: 100%;
+  padding: 100px 0;
+}
+
+/* Pista que se mueve */
+.slide-track {
+  display: flex;
+  width: calc(300px * 12); /* 12 = cantidad total de elementos (6 logos duplicados) */
+  animation: scroll 25s linear infinite;
+}
+
+/* Cada elemento */
+.slide {
+  width: 250px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.slide img {
+  width: 150px;
+  max-height: 150px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.slide img:hover {
+  transform: scale(1.1);
+}
+
+/* Animación del movimiento */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+

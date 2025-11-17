@@ -1,0 +1,21 @@
+.sol-card {
+  border: 2px solid #e2ca06;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform .3s ease, box-shadow .3s ease;
+  min-height: 250px;
+  align-content: center;
+}
+
+.sol-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(226, 202, 6, 0.5)
+}
+
+h2, h4 {
+  letter-spacing: 1px;
+}
+
+.fz-p {
+ font-size: xxx-large;
+}

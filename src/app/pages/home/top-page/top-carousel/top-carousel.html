@@ -1,0 +1,17 @@
+<div class="slider">
+  <div class="slide-track" (mouseenter)="pause()" (mouseleave)="play()">
+
+    <div class="slide" *ngFor="let item of logos">
+      <img [src]="item.src" [alt]="item.alt" (click)="goTo(item.url)" />
+      <h6>{{item.alt}}</h6>
+    </div>
+
+    <!-- Se duplica para crear bucle infinito -->
+    <div class="slide" *ngFor="let item of logos">
+      <img [src]="item.src" [alt]="item.alt" (click)="goTo(item.url)" />
+      <h6>{{item.alt}}</h6>
+    </div>
+  </div>
+</div>
+
+

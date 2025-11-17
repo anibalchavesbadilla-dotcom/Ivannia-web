@@ -26,7 +26,25 @@
   background-image: linear-gradient(
     to bottom,
     #eeeef0,
+    #3e1f9cb5
+  );
+  opacity: 0.98;
+}
+
+.tres-Row{
+  background-image: linear-gradient(
+    to bottom,
+    #3e1f9cb5,
     #3f1f9c
+  );
+  opacity: 0.98;
+}
+
+.cuatro-Row{
+  background-image: linear-gradient(
+    to bottom,
+    #3f1f9c,
+    #260d6e
   );
   opacity: 0.98;
 }
@@ -42,11 +60,10 @@
 }
 
 
-.tres-Row{
-  background-image: linear-gradient(
-    to bottom,
-    #3f1f9c,
-    black
-  );
-  opacity: 0.98;
+app-top-carousel{
+  width: auto;
+  max-width: auto;
+  padding-block: 100px;
+  background-image: linear-gradient(to bottom, #644baf00 0%, #d80fb7 50%, #46269f00 100%);
+  opacity: 1;
 }

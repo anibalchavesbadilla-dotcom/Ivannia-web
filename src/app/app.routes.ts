@@ -8,5 +8,6 @@ export const routes: Routes = [
   { path: 'about', component: About },
   { path: 'contact', component: Contact },
   { path: '', redirectTo: 'SoulSync', pathMatch: 'full' },
+  { path: '#', redirectTo: 'SoulSync' },
   { path: '**', redirectTo: 'SoulSync' }
 ];
