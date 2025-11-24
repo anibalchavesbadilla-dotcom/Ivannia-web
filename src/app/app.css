@@ -10,7 +10,7 @@
 
 @media (max-width: 768px) {
   .app-content {
-    background-repeat: round;
+    background-repeat: repeat-y;
     background-size: 79vh;
     background-position: inherit;
   }

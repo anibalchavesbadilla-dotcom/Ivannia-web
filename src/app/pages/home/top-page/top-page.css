@@ -13,40 +13,19 @@
  color: #d80fb7;
 }
 
-.firt-Row{
+.app-top-page{
   background-image: linear-gradient(
     to bottom,
-    transparent,
-    #eeeef0
+    #ffffffd0,
+    #FFFFFFd0,
+    #FFFFFFd0,
+    #d80fb7d0,
+    #3f1f9cd0,
+    #3f1f9cd0,
+    #3f1f9cd0,
+    #000000d0
   );
   opacity: 0.95;
-}
-
-.secund-Row{
-  background-image: linear-gradient(
-    to bottom,
-    #eeeef0,
-    #3e1f9cb5
-  );
-  opacity: 0.98;
-}
-
-.tres-Row{
-  background-image: linear-gradient(
-    to bottom,
-    #3e1f9cb5,
-    #3f1f9c
-  );
-  opacity: 0.98;
-}
-
-.cuatro-Row{
-  background-image: linear-gradient(
-    to bottom,
-    #3f1f9c,
-    #260d6e
-  );
-  opacity: 0.98;
 }
 
 .btn-1{
@@ -66,4 +45,37 @@ app-top-carousel{
   padding-block: 100px;
   background-image: linear-gradient(to bottom, #644baf00 0%, #d80fb7 50%, #46269f00 100%);
   opacity: 1;
+}
+
+
+
+/* Gradiente sutil dorado */
+.text-gradient {
+  background: linear-gradient(90deg, #f7c56c, #e6a84c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Mejor lectura */
+.about-text {
+  color: #d7d7d7;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Foto con sombra moderna */
+.about-photo {
+  max-width: 350px;
+  border-radius: 20px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.about-photo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 210, 130, 0.35);
+}
+
+/* Sombra suave */
+.shadow-soft {
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
 }

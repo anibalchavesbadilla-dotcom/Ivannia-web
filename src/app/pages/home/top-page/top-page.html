@@ -1,64 +1,103 @@
-<div class="row justify-content-center pt-5 firt-Row">
-  <div class="col-12 col-lg-8 py-4 py-lg-5 my-4 my-lg-5 px-4">
+<div class="app-top-page">
+  <div class="row justify-content-center pt-5 firt-Row">
+    <div class="col-12 col-lg-8 py-4 py-lg-5 my-4 my-lg-5 px-4">
 
-    <div class="row text-center mt-5">
-      <h1 class="display-5" [innerHTML]="title"></h1>
-    </div>
+      <div class="row text-center mt-5">
+        <h1 class="display-5" [innerHTML]="title"></h1>
+      </div>
 
-    <div class="row text-center py-5">
-      <span class="des" [innerHTML]="des"></span>
-    </div>
+      <div class="row text-center py-5">
+        <span class="des" [innerHTML]="des"></span>
+      </div>
 
-    <div class="row justify-content-center mt-4">
-      <div class="col-auto">
-        <button class="btn btn-outline-secondary btn-lg" >Conecta tu marca aquí <i class="bi bi-whatsapp mx-1"></i></button>
+      <div class="row justify-content-center mt-4">
+        <div class="col-auto">
+          <button class="btn btn-outline-secondary btn-lg" >Conecta tu marca aquí <i class="bi bi-whatsapp mx-1"></i></button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="row justify-content-center secund-Row">
-  <div class="col-12 col-md-10 py-5 my-5 text-center text-lg-start px-4">
-    <div class="row mt-4">
-      <div class="col-12 col-lg-6">
-        <h1 class="Mochalatte">Nuestra Esencia</h1>
-        <span>Somos tus aliados para conectar corazón a corazón ❤️🤝 con tu audiencia, crear experiencias memorables ✨ y transformar la manera en que las personas ven, sienten y viven tu marca.
-            A través de creatividad 🎨, estrategia inteligente 📊 y un enfoque profundo en neuromarketing 🧠, diseñamos campañas, talleres y capacitaciones que inspiran 🌟, educan 📚 y generan resultados reales ✅.
-            Porque tu marca merece ser recordada, no solo vista. 👀✨
-        </span>
+  <div class="row justify-content-center secund-Row">
+    <div class="col-12 col-md-10 my-5 text-center text-lg-start px-4">
+      <div class="row mt-4">
+        <div class="col-12 col-lg-6">
+          <h1 class="Mochalatte">Nuestra Esencia</h1>
+          <span>Somos tus aliados para conectar corazón a corazón ❤️🤝 con tu audiencia, crear experiencias memorables ✨ y transformar la manera en que las personas ven, sienten y viven tu marca.
+              A través de creatividad 🎨, estrategia inteligente 📊 y un enfoque profundo en neuromarketing 🧠, diseñamos campañas, talleres y capacitaciones que inspiran 🌟, educan 📚 y generan resultados reales ✅.
+              Porque tu marca merece ser recordada, no solo vista. 👀✨
+          </span>
+        </div>
+        <div class="col-12 my-3 mt-5">
+          <a href="about" class="btn btn-outline-secondary btn-lg btn-1" >Lo que nos define<i class="bi bi-arrow-right ms-4"></i></a>
+        </div>
       </div>
-      <div class="col-12 my-3 mt-5">
-        <a href="about" class="btn btn-outline-secondary btn-lg btn-1" >Lo que nos define<i class="bi bi-arrow-right ms-4"></i></a>
+    </div>
+  </div>
+
+  <div class="row justify-content-center tres-Row">
+  <div class="col-12 my-5 text-center text-lg-start px-0">
+    <div class="row mt-5">
+      <div class="col-12 text-white text-center">
+        <h1 class="Mochalatte text-dark">Clientes</h1>
+        <span class="text-dark">Conexiones que inspiran ✨🤝</span>
+      </div>
+      <app-top-carousel></app-top-carousel>
+    </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center cuatro-Row">
+  <div class="col-12 col-md-10 my-5 text-center text-lg-start px-4">
+    <div class="row mb-5 text-center">
+      <div class="col-12 text-white">
+        <h1 class="Mochalatte">EXPLORA NUESTRAS RUTAS DE CONEXIÓN </h1>
+        <span>Brindamos capacitaciones 📚 donde descubrirás el poder de conectar 🤝 con tu audiencia desde la emoción ❤️, aprendiendo técnicas que podés aplicar por vos mismo ✋ para transformar experiencias ✨ en resultados reales ✅.</span>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="row justify-content-center tres-Row">
- <div class="col-12 my-5 text-center text-lg-start px-0">
-  <div class="row mt-5">
-    <div class="col-12 my-5 text-white text-center">
-      <h1 class="Mochalatte">Clientes</h1>
-      <span>Conexiones que inspiran ✨🤝</span>
+    <div class="row mt-5 g-4">
+      <app-top-page-cards></app-top-page-cards>
     </div>
-    <app-top-carousel></app-top-carousel>
-  </div>
-  </div>
-</div>
-
-<div class="row justify-content-center cuatro-Row">
- <div class="col-12 col-md-10 my-5 text-center text-lg-start px-4">
-  <div class="row mb-5 text-center">
-    <div class="col-12 my-5 text-white">
-      <h1 class="Mochalatte">EXPLORA NUESTRAS RUTAS DE CONEXIÓN </h1>
-      <span>Brindamos capacitaciones 📚 donde descubrirás el poder de conectar 🤝 con tu audiencia desde la emoción ❤️, aprendiendo técnicas que podés aplicar por vos mismo ✋ para transformar experiencias ✨ en resultados reales ✅.</span>
     </div>
   </div>
-  <div class="row mt-5 g-4">
-    <app-top-page-cards></app-top-page-cards>
+
+  <div class="row align-items-center justify-content-center g-5 px-2 py-5">
+
+    <!-- FOTO — en móvil arriba -->
+      <div class="col-12 col-lg-5 text-center order-1 order-lg-2">
+        <img
+          src="https://www.dropbox.com/scl/fi/lw5183zhg6qp38ealn48a/ivania.png?rlkey=uxf4lva9o7jjey53ic9lkpzfx&st=le8drap9&raw=1"
+          class="img-fluid rounded-4 shadow-soft about-photo"
+          alt="Fundadora de SoulSync">
+      </div>
+
+      <!-- TEXTO -->
+      <div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-start">
+        <h2 class="fw-bold text-gradient mb-3 text-white Mochalatte">Quién Soy ❤️</h2>
+
+        <p class="about-text text-white">
+          Hola, soy la fundadora de <strong>SoulSync</strong>, un proyecto que nace desde el corazón y mi pasión por
+          conectar marcas con personas reales.
+        </p>
+
+        <p class="about-text text-white">
+          Con más de <strong>8 años de experiencia</strong> en análisis de mercado y datos, he tenido la oportunidad de
+          trabajar con marcas como <strong>Philip Morris, P&G, 3M e Intel</strong>, donde aprendí que detrás de cada
+          número hay una historia esperando ser entendida.
+        </p>
+
+        <p class="about-text mb-0 text-white">
+          SoulSync nació del deseo de acompañar a emprendedores y marcas a crecer desde la autenticidad:
+          uniendo la <strong>mente</strong> (estrategia) con el <strong>corazón</strong> (emoción) 🧠❤️
+          Porque cuando una marca se comunica desde el alma, <strong>conecta, inspira y transforma</strong>.
+        </p>
+      </div>
   </div>
-  </div>
+
+<div class="row w-100" style="height: 25vh;"></div>
+
 </div>
+
 
 
 

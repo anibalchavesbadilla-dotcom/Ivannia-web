@@ -98,3 +98,16 @@ body {
 .c-gentian-blue{
   color: #3f1f9c;
 }
+
+.nav-link{
+  color: rgb(235, 235, 237) !important;
+  font-family: "BasicSansSemiBold", sans-serif;
+  font-size: larger;
+  line-height: 1.6;
+}
+
+.dropdown-item:focus, .dropdown-item:hover{
+  color: rgb(216, 15, 183);
+  background-color: rgb(235, 235, 237);
+  cursor: pointer;
+}

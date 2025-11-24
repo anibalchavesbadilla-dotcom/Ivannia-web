@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
+import { GetInformationDataService } from '../get-information-data.service';
 
 @Component({
   selector: 'app-header',
@@ -8,34 +9,25 @@ import { NgFor } from '@angular/common';
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
-export class Header implements OnInit, OnDestroy {
+export class Header implements OnInit {
   title: any;
   titledes: any;
   servicios: any[] = [];
   proyectos: any[] = [];
-  IconUrl: string = 'https://www.dropbox.com/scl/fi/sm7xvatocj8kitm9fa70h/ico.png?rlkey=umxq0btxzkhb717za60fjhnk0&st=zczpgqyd&raw=1';
-  private loopInterval: any;
-  private gifDurationMs: number = 10000;
-  constructor(private httpClient:HttpClient) {}
+  IconUrl: string = '';
+  constructor(private data:GetInformationDataService) {}
 
   ngOnInit(): void {
-    this.httpClient.get("https://ivannia-miller-vasquez-default-rtdb.firebaseio.com/DatosPage.json").subscribe((datos:any)=>{
-      this.title = datos.Name
-      this.titledes = datos.NameDes
-    })
-
-    this.httpClient.get("https://ivannia-miller-vasquez-default-rtdb.firebaseio.com/Servicios.json").subscribe((servicios:any)=>{
-      this.servicios = servicios.filter((f:any) => f);
-    })
-
-    this.httpClient.get("https://ivannia-miller-vasquez-default-rtdb.firebaseio.com/Proyectos.json").subscribe((proyectos:any)=>{
-      this.proyectos = proyectos.filter((f:any) => f);
-    })
-  }
-
-  ngOnDestroy(): void {
+    this.title = this.data.datos.header.name
+    this.IconUrl = this.data.datos.header.logo.replace("&dl=0","&raw=1")
+    this.servicios = this.data.datos.servicios
+    this.proyectos = this.data.datos.proyectos
   }
 
 
+  goTo(item:any){
+    localStorage.setItem('datosRC', JSON.stringify(item));
+    window.open('/Rutas-Conexiones', '_blank');
+  }
 
 }
