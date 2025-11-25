@@ -14,13 +14,6 @@ export class GetInformationDataService{
   constructor(private http: HttpClient) {}
 
   async cargarDatos(): Promise<any> {
-    const datosGuardados = localStorage.getItem('datos_page');
-
-    if (datosGuardados) {
-      this.datos = JSON.parse(datosGuardados);
-      console.log("Datos cargados desde localStorage:", this.datos);
-      return this.datos;
-    }
     try {
       this.url = this.url.replace("https://www.dropbox.com/","https://dl.dropboxusercontent.com/").replace("&dl=0","")
       const data = await firstValueFrom(this.http.get(this.url));

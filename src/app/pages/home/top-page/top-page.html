@@ -12,7 +12,7 @@
 
       <div class="row justify-content-center mt-4">
         <div class="col-auto">
-          <button class="btn btn-outline-secondary btn-lg" >Conecta tu marca aquí <i class="bi bi-whatsapp mx-1"></i></button>
+          <a href="https://wa.me/{{whatsApp}}"  rel="noopener noreferrer" target="_blank" class="btn btn-outline-secondary btn-lg" >Conecta tu marca aquí <i class="bi bi-whatsapp mx-1"></i></a>
         </div>
       </div>
     </div>
@@ -22,11 +22,8 @@
     <div class="col-12 col-md-10 my-5 text-center text-lg-start px-4">
       <div class="row mt-4">
         <div class="col-12 col-lg-6">
-          <h1 class="Mochalatte">Nuestra Esencia</h1>
-          <span>Somos tus aliados para conectar corazón a corazón ❤️🤝 con tu audiencia, crear experiencias memorables ✨ y transformar la manera en que las personas ven, sienten y viven tu marca.
-              A través de creatividad 🎨, estrategia inteligente 📊 y un enfoque profundo en neuromarketing 🧠, diseñamos campañas, talleres y capacitaciones que inspiran 🌟, educan 📚 y generan resultados reales ✅.
-              Porque tu marca merece ser recordada, no solo vista. 👀✨
-          </span>
+          <h1 class="Mochalatte" [innerHTML]="qSomosTitulo"></h1>
+          <span [innerHTML]="qSomosDes"></span>
         </div>
         <div class="col-12 my-3 mt-5">
           <a href="about" class="btn btn-outline-secondary btn-lg btn-1" >Lo que nos define<i class="bi bi-arrow-right ms-4"></i></a>
@@ -39,8 +36,8 @@
   <div class="col-12 my-5 text-center text-lg-start px-0">
     <div class="row mt-5">
       <div class="col-12 text-white text-center">
-        <h1 class="Mochalatte text-dark">Clientes</h1>
-        <span class="text-dark">Conexiones que inspiran ✨🤝</span>
+        <h1 class="Mochalatte text-dark" [innerHTML]="clientesTitulo"></h1>
+        <span class="text-dark" [innerHTML]="clientesDes"></span>
       </div>
       <app-top-carousel></app-top-carousel>
     </div>
@@ -51,8 +48,8 @@
   <div class="col-12 col-md-10 my-5 text-center text-lg-start px-4">
     <div class="row mb-5 text-center">
       <div class="col-12 text-white">
-        <h1 class="Mochalatte">EXPLORA NUESTRAS RUTAS DE CONEXIÓN </h1>
-        <span>Brindamos capacitaciones 📚 donde descubrirás el poder de conectar 🤝 con tu audiencia desde la emoción ❤️, aprendiendo técnicas que podés aplicar por vos mismo ✋ para transformar experiencias ✨ en resultados reales ✅.</span>
+        <h1 class="Mochalatte" [innerHTML]="rutasTitulo"></h1>
+        <span [innerHTML]="rutasDes"></span>
       </div>
     </div>
     <div class="row mt-5 g-4">
@@ -66,31 +63,15 @@
     <!-- FOTO — en móvil arriba -->
       <div class="col-12 col-lg-5 text-center order-1 order-lg-2">
         <img
-          src="https://www.dropbox.com/scl/fi/lw5183zhg6qp38ealn48a/ivania.png?rlkey=uxf4lva9o7jjey53ic9lkpzfx&st=le8drap9&raw=1"
+          [src]="qsimgUrl"
           class="img-fluid rounded-4 shadow-soft about-photo"
           alt="Fundadora de SoulSync">
       </div>
 
       <!-- TEXTO -->
       <div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-start">
-        <h2 class="fw-bold text-gradient mb-3 text-white Mochalatte">Quién Soy ❤️</h2>
-
-        <p class="about-text text-white">
-          Hola, soy la fundadora de <strong>SoulSync</strong>, un proyecto que nace desde el corazón y mi pasión por
-          conectar marcas con personas reales.
-        </p>
-
-        <p class="about-text text-white">
-          Con más de <strong>8 años de experiencia</strong> en análisis de mercado y datos, he tenido la oportunidad de
-          trabajar con marcas como <strong>Philip Morris, P&G, 3M e Intel</strong>, donde aprendí que detrás de cada
-          número hay una historia esperando ser entendida.
-        </p>
-
-        <p class="about-text mb-0 text-white">
-          SoulSync nació del deseo de acompañar a emprendedores y marcas a crecer desde la autenticidad:
-          uniendo la <strong>mente</strong> (estrategia) con el <strong>corazón</strong> (emoción) 🧠❤️
-          Porque cuando una marca se comunica desde el alma, <strong>conecta, inspira y transforma</strong>.
-        </p>
+        <h2 class="fw-bold text-gradient mb-3 text-white Mochalatte" [innerHTML]="qstitulo"></h2>
+        <p class="about-text text-white" [innerHTML]="qsdescription"></p>
       </div>
   </div>
 

@@ -51,15 +51,15 @@
           </a>
           <ul class="dropdown-menu">
             <li *ngFor="let proyecto of proyectos">
-              <a class="dropdown-item" href="#">{{proyecto.title}}</a>
+              <a class="dropdown-item"(click)="goToP(proyecto)">{{proyecto.title}}</a>
             </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contáctanos</a>
+          <a class="nav-link" href="https://wa.me/{{whatsApp}}"  rel="noopener noreferrer" target="_blank">Contáctanos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
+          <a class="nav-link" [href]='gCalendar' target="_blank">Agendar</a>
         </li>
       </ul>
     </div>

@@ -1,0 +1,47 @@
+.container{
+ padding-top: 20vh !important;
+ background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+ opacity: 0.95;
+}
+
+/* --- TITULOS --- */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+
+/* --- TEXTO DESCRIPTIVO --- */
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+/* --- FOTO CON ESTILO --- */
+.shadow-img {
+  max-width: 350px;
+  border-radius: 20px;
+  transition: all .3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.shadow-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+.pb-f{
+  padding-bottom: 10vh;
+}
+
+.pb-fb{
+  padding-bottom: 10vh;
+}
+
+

@@ -1,33 +1,41 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GetInformationDataService } from '../get-information-data.service';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [NgFor],
   templateUrl: './footer.html',
   styleUrl: './footer.css'
 })
 export class Footer implements OnInit {
   title: any;
-  titledes: any;
   servicios: any[] = [];
   proyectos: any[] = [];
+  whatsApp: any;
+  gCalendar: any;
+  year:any;
 
-  constructor(private httpClient:HttpClient) {}
+  constructor(private data:GetInformationDataService) {}
 
   ngOnInit(): void {
-    this.httpClient.get("https://ivannia-miller-vasquez-default-rtdb.firebaseio.com/DatosPage.json").subscribe((datos:any)=>{
-      this.title = datos.Name
-      this.titledes = datos.NameDes
-    })
+    this.title = this.data.datos.header.name
+    this.whatsApp = this.data.datos.header.whatsApp
+    this.gCalendar = this.data.datos.header.gCalendar
+    this.servicios = this.data.datos.servicios
+    this.proyectos = this.data.datos.proyectos
+    this.year = new Date().getFullYear();
+  }
 
-    this.httpClient.get("https://ivannia-miller-vasquez-default-rtdb.firebaseio.com/Servicios.json").subscribe((servicios:any)=>{
-      this.servicios = servicios.filter((f:any) => f);
-    })
+  goTo(item:any){
+    localStorage.setItem('datosRC', JSON.stringify(item));
+    window.open('/Rutas-Conexiones', '_blank');
+  }
 
-    this.httpClient.get("https://ivannia-miller-vasquez-default-rtdb.firebaseio.com/Proyectos.json").subscribe((proyectos:any)=>{
-      this.proyectos = proyectos.filter((f:any) => f);
-    })
+  goToP(item:any){
+    localStorage.setItem('datosPJ', JSON.stringify(item));
+    window.open('/Projeto', '_blank');
   }
 
 }

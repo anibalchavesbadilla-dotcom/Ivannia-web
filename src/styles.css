@@ -105,7 +105,11 @@ body {
   font-size: larger;
   line-height: 1.6;
 }
-
+@media (max-width: 600px) {
+  .nav-link{
+    font-size: x-large;
+  }
+}
 .dropdown-item:focus, .dropdown-item:hover{
   color: rgb(216, 15, 183);
   background-color: rgb(235, 235, 237);

@@ -1,1 +1,29 @@
-<p>project works!</p>
+<div class="container py-5">
+  <!-- TÍTULO -->
+  <div class="row justify-content-center text-center mb-5 pb-f">
+    <div class="col-12 col-lg-8">
+      <h2 class="section-title mb-2 Mochalatte" [innerHTML]="Titulo"></h2>
+      <p class="section-subtitle" [innerHTML]="SubTitulo"></p>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="row align-items-center justify-content-center g-5 pb-fb">
+
+    <!-- FOTO -->
+    <div class="col-12 col-lg-5 text-center order-1 order-lg-2">
+      <img
+        [src]="PhotoURL"
+        class="img-fluid rounded-4 shadow-img"
+        alt="Fundadora SoulSync"
+      >
+    </div>
+
+    <!-- TEXTO -->
+    <div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-start">
+      <div class="about-text mb-0" [innerHTML]="DescripcionHTML"></div>
+    </div>
+
+  </div>
+</div>
+
