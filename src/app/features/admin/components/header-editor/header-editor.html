@@ -1,0 +1,26 @@
+<div class="card shadow-sm mb-3" [formGroup]="group">
+  <div class="card-header bg-light">
+    <h5 class="mb-0">Configuración del Header</h5>
+  </div>
+  <div class="card-body">
+    <div class="mb-3">
+      <label class="form-label">Nombre del Sitio</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Logo URL</label>
+      <input type="text" class="form-control" formControlName="logo">
+      @if(group.get('logo')?.value) {
+        <img [src]="group.get('logo')?.value.replace('dl=0','raw=1')" class="img-thumbnail mt-2" style="max-height: 100px">
+      }
+    </div>
+    <div class="mb-3">
+      <label class="form-label">WhatsApp</label>
+      <input type="text" class="form-control" formControlName="whatsApp">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Google Calendar Link</label>
+      <input type="text" class="form-control" formControlName="gCalendar">
+    </div>
+  </div>
+</div>

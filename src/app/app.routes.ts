@@ -4,14 +4,24 @@ import { About } from './pages/about/about';
 import { Contact } from './pages/contact/contact';
 import { RutasConexiones } from './pages/rutas-conexiones/rutas-conexiones';
 import { Project } from './pages/project/project';
+import { Login } from './components/login/login';
+import { Admin } from './components/admin/admin';
+import { authGuard } from './guards/auth.guard';
+import { AdminLayoutComponent } from './features/admin/admin-layout/admin-layout';
 
 export const routes: Routes = [
+  // Ruta inicial → redirigir a SoulSync
+  { path: '', redirectTo: 'SoulSync', pathMatch: 'full' },
+
+  // Tus rutas normales
   { path: 'SoulSync', component: Home },
   { path: 'about', component: About },
   { path: 'contact', component: Contact },
   { path: 'Rutas-Conexiones', component: RutasConexiones },
   { path: 'proyeto', component: Project },
-  { path: '', redirectTo: 'SoulSync', pathMatch: 'full' },
-  { path: '#', redirectTo: 'SoulSync' },
-  { path: '**', redirectTo: 'SoulSync' }
+  { path: 'login', component: Login },
+  { path: 'admin', component: AdminLayoutComponent, canActivate: [authGuard] },
+
+  // Rutas no encontradas → SoulSync
+  { path: '**', redirectTo: 'SoulSync' },
 ];

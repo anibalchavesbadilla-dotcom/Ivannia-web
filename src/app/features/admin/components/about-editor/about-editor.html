@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-lg-6 mb-4">
+    <div class="card shadow-sm border-primary h-100" [formGroup]="quienSoyGroup">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Sección: Quién Soy</h5>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label class="form-label">Título</label>
+          <input type="text" class="form-control" formControlName="titulo">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Foto URL (Fundadora)</label>
+          <input type="text" class="form-control" formControlName="imgUrl">
+          @if(quienSoyGroup.get('imgUrl')?.value) {
+            <img [src]="quienSoyGroup.get('imgUrl')?.value.replace('dl=0','raw=1')" class="img-thumbnail mt-2" style="max-height: 100px">
+          }
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Biografía / Descripción</label>
+          <textarea class="form-control" rows="10" formControlName="description"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 mb-4">
+    <div class="card shadow-sm h-100" [formGroup]="aboutGroup">
+      <div class="card-header bg-dark text-white">
+        <h5 class="mb-0">Sección: About SoulSync</h5>
+      </div>
+      <div class="card-body">
+        <h6 class="text-primary">Introducción</h6>
+        <div class="mb-3">
+          <label class="form-label">Título Principal</label>
+          <input type="text" class="form-control" formControlName="titulo">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Descripción General</label>
+          <textarea class="form-control" rows="4" formControlName="description"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Imagen General URL</label>
+          <input type="text" class="form-control" formControlName="imgUrl">
+          @if(aboutGroup.get('imgUrl')?.value) {
+            <img [src]="aboutGroup.get('imgUrl')?.value.replace('dl=0','raw=1')" class="img-thumbnail mt-2" style="max-height: 100px">
+          }
+        </div>
+
+        <hr>
+
+        <h6 class="text-primary">Misión</h6>
+        <div class="mb-2">
+          <textarea class="form-control" rows="3" formControlName="mision" placeholder="Texto Misión"></textarea>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control form-control-sm" formControlName="misionImg" placeholder="URL Imagen Misión">
+          @if(aboutGroup.get('misionImg')?.value) {
+            <img [src]="aboutGroup.get('misionImg')?.value.replace('dl=0','raw=1')" class="img-thumbnail mt-2" style="max-height: 100px">
+          }
+        </div>
+
+        <hr>
+
+        <h6 class="text-primary">Visión</h6>
+        <div class="mb-2">
+          <textarea class="form-control" rows="3" formControlName="vision" placeholder="Texto Visión"></textarea>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control form-control-sm" formControlName="visionImg" placeholder="URL Imagen Visión">
+          @if(aboutGroup.get('visionImg')?.value) {
+            <img [src]="aboutGroup.get('visionImg')?.value.replace('dl=0','raw=1')" class="img-thumbnail mt-2" style="max-height: 100px">
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

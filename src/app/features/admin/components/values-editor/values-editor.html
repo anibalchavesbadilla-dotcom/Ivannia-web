@@ -1,0 +1,49 @@
+<div class="card shadow-sm" [formGroup]="group">
+  <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+    <h5 class="mb-0">Nuestros Valores</h5>
+    <button class="btn btn-light btn-sm text-info fw-bold" (click)="addValue()">
+      <i class="bi bi-plus-lg"></i> Agregar Valor
+    </button>
+  </div>
+
+  <div class="card-body">
+    <div class="row mb-4 border-bottom pb-3">
+      <div class="col-12 mb-3">
+        <label class="form-label">Texto Introductorio de Valores</label>
+        <textarea class="form-control" rows="2" formControlName="titulo"></textarea>
+      </div>
+      <div class="col-12">
+        <label class="form-label">GIF/Video URL</label>
+        <input type="text" class="form-control" formControlName="gifUrl">
+        @if(group.get('gifUrl')?.value) {
+          <img [src]="group.get('gifUrl')?.value.replace('dl=0','raw=1')" class="img-thumbnail mt-2" style="max-height: 100px">
+        }
+      </div>
+    </div>
+
+    <h6 class="mb-3">Listado de Valores</h6>
+    <div class="row g-3">
+      @for (val of valoresArray.controls; track $index) {
+        <div class="col-md-6 col-lg-4" [formGroup]="asGroup(val)">
+          <div class="card h-100 border-0 bg-light">
+            <div class="card-body position-relative">
+              <button class="btn btn-sm btn-outline-danger position-absolute top-0 end-0 m-2"
+                      (click)="removeValue($index)" title="Eliminar Valor">
+                <i class="bi bi-x"></i>
+              </button>
+
+              <div class="mb-2 mt-2">
+                <label class="form-label small fw-bold">Nombre del Valor</label>
+                <input type="text" class="form-control" formControlName="titulo">
+              </div>
+              <div>
+                <label class="form-label small fw-bold">Descripción Corta</label>
+                <textarea class="form-control" rows="2" formControlName="description"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

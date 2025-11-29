@@ -1,0 +1,7 @@
+.nav-link {
+    color: var(--bs-nav-link-color) !important;
+}
+
+tabs .nav-link.active {
+    color: var(--bs-nav-tabs-link-active-color) !important;
+}

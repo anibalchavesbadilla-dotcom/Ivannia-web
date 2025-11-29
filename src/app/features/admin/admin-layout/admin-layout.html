@@ -1,0 +1,60 @@
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Administrador de Contenido</h1>
+    <button class="btn btn-primary btn-lg" (click)="save()" [disabled]="form.invalid || loading">
+      <i class="bi bi-save"></i> Guardar Cambios
+    </button>
+  </div>
+
+  @if (loading) {
+    <div class="text-center"><div class="spinner-border"></div></div>
+  } @else {
+    <form [formGroup]="form">
+      <ul class="nav nav-tabs mb-3" id="adminTabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#header">Header & Footer</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#home">Home</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#about">Quién Soy & About</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#values">Valores</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#services">Servicios</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#projects">Proyectos</button></li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="header">
+          <div class="row">
+            <div class="col-md-6">
+              <app-header-editor [group]="getGroup('header')"></app-header-editor>
+            </div>
+            <div class="col-md-6">
+              <app-footer-editor [group]="getGroup('footer')"></app-footer-editor>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="home">
+          <app-home-editor [group]="getGroup('home')"></app-home-editor>
+        </div>
+
+        <div class="tab-pane fade" id="about">
+          <app-about-editor
+            [quienSoyGroup]="getGroup('QuienSoy')"
+            [aboutGroup]="getGroup('about')">
+          </app-about-editor>
+        </div>
+
+        <div class="tab-pane fade" id="values">
+          <app-values-editor [group]="getGroup('NuestrosValores')"></app-values-editor>
+        </div>
+
+        <div class="tab-pane fade" id="services">
+          <app-services-editor [array]="getArray('servicios')"></app-services-editor>
+        </div>
+
+          <div class="tab-pane fade" id="projects">
+          <app-projects-editor [array]="getArray('proyectos')"></app-projects-editor>
+        </div>
+
+      </div>
+    </form>
+  }
+</div>
