@@ -86,3 +86,10 @@
     height: 50px;
   }
 }
+.navbar {
+  background-color: rgb(216, 15, 183);
+}
+
+.nav-link , .navbar-brand{
+  color: #fff !important;
+}
