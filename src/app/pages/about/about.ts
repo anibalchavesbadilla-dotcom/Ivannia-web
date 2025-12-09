@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { GetInformationDataService } from '../../components/get-information-data.service';
+import { DbService } from '../../services/db.service';
 
 @Component({
   selector: 'app-about',
@@ -23,20 +23,20 @@ export class About implements OnInit, OnDestroy{
   nValoresTitulo: any;
   valores: any;
 
-  constructor(private data:GetInformationDataService){}
+  private db = inject(DbService);
 
   ngOnInit(): void {
-    this.titulo = this.data.datos.about.titulo
-    this.description = this.data.datos.about.description
-    this.imgUrl = this.data.datos.about.imgUrl
-    this.misionImg = this.data.datos.about.misionImg
-    this.mision = this.data.datos.about.mision
-    this.visionImg = this.data.datos.about.visionImg
-    this.vision = this.data.datos.about.vision
+    this.titulo = this.db.data.about.titulo
+    this.description = this.db.data.about.description
+    this.imgUrl = this.db.data.about.imgUrl
+    this.misionImg = this.db.data.about.misionImg
+    this.mision = this.db.data.about.mision
+    this.visionImg = this.db.data.about.visionImg
+    this.vision = this.db.data.about.vision
 
-    this.nValoresTitulo = this.data.datos.NuestrosValores.titulo
-    this.gifUrl = this.data.datos.NuestrosValores.gifUrl
-    this.valores = this.data.datos.NuestrosValores.valores
+    this.nValoresTitulo = this.db.data.NuestrosValores.titulo
+    this.gifUrl = this.db.data.NuestrosValores.gifUrl
+    this.valores = this.db.data.NuestrosValores.valores
 
     this.startGifLoop();
   }

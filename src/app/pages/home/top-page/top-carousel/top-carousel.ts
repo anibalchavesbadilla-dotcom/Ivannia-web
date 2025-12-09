@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { GetInformationDataService } from '../../../../components/get-information-data.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { DbService } from '../../../../services/db.service';
 
 @Component({
   selector: 'app-top-carousel',
@@ -11,10 +11,10 @@ import { GetInformationDataService } from '../../../../components/get-informatio
 export class TopCarousel implements OnInit {
   proyectos: any[] | undefined;
 
-  constructor(private data:GetInformationDataService){}
+  private db = inject(DbService);
 
   ngOnInit(): void {
-    this.proyectos = this.data.datos.proyectos
+    this.proyectos = this.db.data.proyectos
   }
 
   pause() {

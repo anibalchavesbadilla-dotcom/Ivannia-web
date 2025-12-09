@@ -1,15 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { Database, ref, set, get, update, onValue } from '@angular/fire/database';
-import { firstValueFrom, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class DbService {
+export class DbService{
+  data:any = null
   constructor(private db: Database) {}
 
   // Obtener una vez
   async getPath(path: string) {
     const snapshot = await get(ref(this.db, path));
-    return snapshot.exists() ? snapshot.val() : null;
+    if(snapshot.exists()){
+      this.data = snapshot.val()
+      return this.data
+    }
+    return null
   }
 
   // Escuchar en tiempo real (devuelve Observable)

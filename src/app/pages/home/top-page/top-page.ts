@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { TopCarousel } from "./top-carousel/top-carousel";
 import { TopPageCards } from "./top-page-cards/top-page-cards";
-import { GetInformationDataService } from '../../../components/get-information-data.service';
+import { DbService } from '../../../services/db.service';
 
 @Component({
   selector: 'app-top-page',
@@ -26,27 +26,24 @@ export class TopPage implements OnInit {
   qsimgUrl: any;
 
   whatsApp:any;
-
-
-
-  constructor(private data:GetInformationDataService) {}
+  private db = inject(DbService);
 
   ngOnInit(): void {
-    this.title = this.data.datos.home.title
-    this.des = this.data.datos.home.description
+    this.title = this.db.data.home.title
+    this.des = this.db.data.home.description
 
-    this.qSomosTitulo = this.data.datos.home.qSomosTitulo
-    this.qSomosDes = this.data.datos.home.qSomosDes
-    this.clientesTitulo = this.data.datos.home.clientesTitulo
-    this.clientesDes = this.data.datos.home.clientesDes
-    this.rutasTitulo = this.data.datos.home.rutasTitulo
-    this.rutasDes = this.data.datos.home.rutasDes
+    this.qSomosTitulo = this.db.data.home.qSomosTitulo
+    this.qSomosDes = this.db.data.home.qSomosDes
+    this.clientesTitulo = this.db.data.home.clientesTitulo
+    this.clientesDes = this.db.data.home.clientesDes
+    this.rutasTitulo = this.db.data.home.rutasTitulo
+    this.rutasDes = this.db.data.home.rutasDes
 
-    this.qstitulo = this.data.datos.QuienSoy.titulo
-    this.qsdescription = this.data.datos.QuienSoy.description
-    this.qsimgUrl = this.data.datos.QuienSoy.imgUrl.replace('&dl=0','&raw=1')
+    this.qstitulo = this.db.data.QuienSoy.titulo
+    this.qsdescription = this.db.data.QuienSoy.description
+    this.qsimgUrl = this.db.data.QuienSoy.imgUrl.replace('&dl=0','&raw=1')
 
-    this.whatsApp = this.data.datos.header.whatsApp
+    this.whatsApp = this.db.data.header.whatsApp
 
 
   }

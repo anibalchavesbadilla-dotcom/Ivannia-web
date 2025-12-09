@@ -1,0 +1,33 @@
+<div class="container my-4">
+  <h1 class="text-center m-5 pb-5 Mochalatte">Conectemos</h1>
+
+  <div class="row justify-content-center">
+    <div class="slider">
+      <div class="slide-track" (mouseenter)="pause()" (mouseleave)="play()">
+
+        <div class="slide" *ngFor="let item of proyectos">
+          <div (click)="goTo(item)" class="icon-wrapper">
+            <i [class]="item.icon"></i>
+            <h6>{{ item.title }}</h6>
+          </div>
+        </div>
+
+        <!-- Duplicado para bucle infinito -->
+        <div class="slide" *ngFor="let item of proyectos">
+          <div (click)="goTo(item)" class="icon-wrapper">
+            <i [class]="item.icon"></i>
+            <h6>{{ item.title }}</h6>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row w-100 text-center mt-5 justify-content-center">
+    <div class="col-auto">
+      <a href="#"  rel="noopener noreferrer" target="_blank" class="btn btn-outline-secondary btn-lg color-change">Agenda Gratis!! <i class="bi bi-calendar mx-1"></i></a>
+    </div>
+  </div>
+
+</div>

@@ -5,3 +5,11 @@
 tabs .nav-link.active {
     color: var(--bs-nav-tabs-link-active-color) !important;
 }
+
+
+.container{
+    background-color: #ffffffba !important;
+    max-height: 100vh;
+    height: 100vh;
+    max-width: 100%;
+}

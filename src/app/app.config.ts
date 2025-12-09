@@ -8,13 +8,13 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
-import { GetInformationDataService } from './components/get-information-data.service';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { DbService } from './services/db.service';
 
-export function initApp(datosService: GetInformationDataService) {
-  return () => datosService.cargarDatos();
+export function initApp(db : DbService) {
+  return () => db.getPath('/')
 }
 
 export const appConfig: ApplicationConfig = {
@@ -26,7 +26,7 @@ export const appConfig: ApplicationConfig = {
     {
       provide: APP_INITIALIZER,
       useFactory: initApp,
-      deps: [GetInformationDataService],
+      deps: [DbService],
       multi: true,
     },
     provideFirebaseApp(() =>
